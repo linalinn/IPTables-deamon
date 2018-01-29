@@ -1,0 +1,52 @@
+{
+  "traffic" : "OUT/IN",
+  "protocol" : "tcp",
+  "interface" : "eth0",
+  "dIP" : "XXX.XXX.XXX.XXX",
+  "dPort" : "YYYY",
+  "todest" : "XXX.XXX.XXX.XXX:YYYY",
+  "MASQUERADE" : "NO/IP/i:eth0"
+}
+{"protocol" : "tcp","interface" : "eth0","dIP" : "XXX.XXX.XXX.XXX","dPort" : "YYYY","todest" : "XXX.XXX.XXX.XXX:YYYY"}
+
+DROP
+{
+  "traffic" : "OUT/IN",
+  "protocol" : "tcp",
+  "interface" : "eth0",
+  "dIP" : "XXX.XXX.XXX.XXX",
+  "dPort" : "YYYY"
+}
+
+REJECT
+{
+  "traffic" : "OUT/IN",
+  "protocol" : "tcp",
+  "interface" : "eth0",
+  "dIP" : "XXX.XXX.XXX.XXX",
+  "dPort" : "YYYY"
+}
+
+ACCEPT
+{
+  "traffic" : "OUT/IN",
+  "protocol" : "tcp",
+  "interface" : "eth0",
+  "dIP" : "XXX.XXX.XXX.XXX",
+  "dPort" : "YYYY",
+  "sIP" : "XXX.XXX.XXX.XXX",
+  "sPort" : "YYYY",
+  "state" : "NEW,ESTABLISHED,RELATED"
+}
+
+LOG
+{
+  "traffic" : "OUT/IN",
+  "protocol" : "tcp",
+  "interface" : "eth0",
+  "dIP" : "XXX.XXX.XXX.XXX",
+  "dPort" : "YYYY",
+  "sIP" : "XXX.XXX.XXX.XXX",
+  "sPort" : "YYYY",
+  "log-prefix" : "IP DROP"
+}
